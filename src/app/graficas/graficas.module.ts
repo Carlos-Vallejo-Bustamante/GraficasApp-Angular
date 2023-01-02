@@ -7,6 +7,7 @@ import { BarrasDoblesComponent } from './pages/barras-dobles/barras-dobles.compo
 import { DonutComponent } from './pages/donut/donut.component';
 import { GraficaBarraComponent } from './components/grafica-barra/grafica-barra.component';
 import { GraficasComponent } from './services/graficas/graficas.component';
+import { DonutHttpComponent } from './pages/donut-http/donut-http.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { GraficasComponent } from './services/graficas/graficas.component';
     BarrasDoblesComponent,
     DonutComponent,
     GraficaBarraComponent,
-    GraficasComponent
+    GraficasComponent,
+    DonutHttpComponent
   ],
   imports: [
     CommonModule,
