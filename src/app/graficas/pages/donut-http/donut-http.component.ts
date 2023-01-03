@@ -17,7 +17,9 @@ export class DonutHttpComponent implements OnInit {
   public dataSetsData: number[] = [];
   public doughnutChartData: ChartData<'doughnut'> = {
     labels: this.doughnutChartLabels,
-    datasets: []
+    datasets: [
+
+    ]
   };
   public doughnutChartType: ChartType = 'doughnut';
 
@@ -33,12 +35,8 @@ export class DonutHttpComponent implements OnInit {
   constructor(private graficasService: GraficasService) { }
 
   ngOnInit(): void {
-    this.graficasService.getUsuariosRedesSociales()
-      .subscribe(data => {
-
-        const labels = Object.keys(data);
-        const values = Object.values(data);
-
+    this.graficasService.getUsuariosRedesSocialesData()
+      .subscribe(({ labels, values }) => {
         labels.forEach(element => {
           this.doughnutChartLabels.push(element)
         });
@@ -46,7 +44,6 @@ export class DonutHttpComponent implements OnInit {
         this.doughnutChartData.datasets.push(
           { data: values, backgroundColor: ['#00D8ED', '#00A0F7', '#0B5DE0', '#01F0DB'], hoverBackgroundColor: '#4C00ED' }
         );
-
       })
   }
 
